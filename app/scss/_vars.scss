@@ -1,9 +1,2 @@
-$maxWidth: 1230px;
-
-
-@mixin adaptive-size($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $maxWidth: $maxWidth - 320;
-
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-}
+$white: #fff;
+$black: #2d2a2a;
