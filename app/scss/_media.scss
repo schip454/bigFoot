@@ -73,6 +73,23 @@
   .watch__info-included {
     padding-top: 0;
   }
+
+  // blog-page
+  .pagination {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .article__slider-img {
+    img {
+      height: 564px;
+    }
+  }
+  .article__banner {
+    padding: 70px 7px 0 30px;
+  }
+  .article__banner-title {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -89,6 +106,24 @@
   }
   .watch__question {
     font-size: 20px;
+  }
+
+  // blog-page
+  .article__slider {
+    margin-bottom: 10px;
+  }
+  .article__info-quote {
+    max-width: 700px;
+    font-size: 24px;
+  }
+  .article__info-video iframe {
+    height: 364px;
+  }
+  .pagination {
+    font-size: 16px;
+  }
+  .article {
+    padding: 40px 0 60px;
   }
 }
 
@@ -120,6 +155,60 @@
   }
   .watch__info-item {
     max-width: none;
+  }
+
+  // blog-page
+  .pagination__list {
+    flex-wrap: wrap;
+  }
+  .article__choose-list {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .article__choose-item {
+    margin-right: 0;
+  }
+  .article__title {
+    font-size: 38px;
+  }
+  .article__slider-img img {
+    height: 364px;
+  }
+  .article__slider .slick-next,
+  .article__slider .slick-prev {
+    transform: translateX(-10%);
+  }
+  .article__info-initialletter {
+    font-size: 76px;
+    line-height: 76px;
+  }
+  .article__info-signature {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .article__info-box {
+    margin-bottom: 20px;
+  }
+  .article__info-quote {
+    margin: 30px 0 10px;
+    font-size: 18px;
+    padding-right: 0;
+  }
+  .article__info-video {
+    margin: 10px 0 25px;
+  }
+  .article__info-author {
+    margin-bottom: 35px;
+  }
+  .article__banner-title {
+    font-size: 20px;
+  }
+  .article__banner {
+    padding: 90px 10px 0 20px;
+  }
+  .article__banner-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -156,5 +245,35 @@
       width: 24px;
       height: 24px;
     }
+  }
+
+  // blog-page
+  .article__title {
+    font-size: 24px;
+  }
+  .article__slider-img img {
+    height: 280px;
+  }
+  .slick-arrow {
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  .article__slider {
+    padding-bottom: 40px;
+  }
+  .article__info-initialletter {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .article__info-quote {
+    font-size: 16px;
+  }
+  .article__info-video iframe {
+    height: 280px;
+  }
+  .article__banner {
+    height: 380px;
   }
 }

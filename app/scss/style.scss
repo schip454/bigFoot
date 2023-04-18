@@ -2,6 +2,7 @@
 @import "reset";
 @import "global";
 @import "animate";
+@import "../../node_modules/slick-slider/slick/slick";
 
 .watch {
   padding: 100px 0;
@@ -125,6 +126,230 @@
   }
   &__mobile {
     display: none;
+  }
+}
+
+.pagination {
+  padding-top: 40px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  &__inner {
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    color: rgba($color: $black, $alpha: 0.6);
+    span {
+      // margin-right: 10px;
+    }
+  }
+  &__item {
+    margin-right: 10px;
+    margin-left: 10px;
+    &:first-child {
+      margin-right: 26px;
+    }
+  }
+  &__item--active {
+    color: $black;
+  }
+  &__link {
+    margin-right: 0;
+  }
+}
+
+.article {
+  padding: 73px 0 120px;
+  &__wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__choose {
+    margin-bottom: 15px;
+  }
+  &__choose-list {
+    display: flex;
+    align-items: center;
+  }
+  &__choose-item {
+    max-width: 93px;
+    width: 100%;
+    border: 1px solid #2d2a2a;
+    border-radius: 15px;
+    min-height: 23px;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    margin-right: 10px;
+    padding: 2px 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__choose-item--active {
+    max-width: 125px;
+    background-color: $blue;
+    border-radius: 7px;
+    border: none;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 15px;
+  }
+  &__dateandtime {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    span {
+      display: inline-block;
+      margin: 0 15px;
+    }
+  }
+  &__time {
+    display: flex;
+    align-items: center;
+    color: $grey;
+    img {
+      padding-right: 8px;
+    }
+  }
+  &__slider {
+    text-align: center;
+    position: relative;
+    padding-bottom: 65px;
+    margin-bottom: 40px;
+    .slick-next,
+    .slick-prev {
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+    .slick-next {
+      left: 50.5%;
+    }
+    .slick-prev {
+      right: 50.5%;
+    }
+  }
+  &__slider-img {
+    max-width: 1380px;
+    text-align: center;
+  }
+  &__info {
+  }
+  &__info-text {
+    margin-bottom: 20px;
+    max-width: 755px;
+  }
+  &__info-initialletter {
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 700;
+  }
+  &__info-box {
+    margin-bottom: 30px;
+  }
+  &__info-img {
+    margin-bottom: 10px;
+  }
+  &__info-signature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 140%;
+  }
+  &__info-signatureinfo {
+  }
+  &__info-signatureauthor {
+  }
+  &__info-quote {
+    max-width: 755px;
+    margin: 50px 0;
+    color: #131314;
+    position: relative;
+    font-family: "Lato", sans-serif;
+    // padding: 10px 10px 0 20px;
+    padding: 5px 20px 0 20px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 140%;
+    min-height: 152px;
+
+    &:after {
+      content: "";
+      width: 7px;
+      background: $black;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      bottom: 20px;
+    }
+  }
+  &__info-video {
+    margin: 30px 0 50px;
+    iframe {
+      max-width: 1000px;
+      border-radius: 25px;
+      width: 100%;
+      height: 500px;
+    }
+  }
+  &__info-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    margin-bottom: 20px;
+  }
+  &__info-author {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    margin-bottom: 50px;
+  }
+  &__banner {
+    background: url(../images/blog-page/banner.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 1000px;
+    width: 100%;
+    height: 420px;
+    padding: 70px 130px 0 80px;
+    border-radius: 15px;
+    text-transform: uppercase;
+  }
+  &__banner-title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 120%;
+    color: $white;
+    padding-bottom: 100px;
+  }
+  &__banner-btn {
+    padding: 19px 74px;
+    background-color: $orange;
+    border-radius: 7px;
+    transition: 0.3s ease;
+    box-shadow: 3px 10px 15px 0px $black;
+    font-weight: 500;
+    &:active,
+    &:hover {
+      background-color: lighten($color: $orange, $amount: 7%);
+      box-shadow: 0 0 0 $black;
+    }
   }
 }
 
