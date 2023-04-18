@@ -53,4 +53,9 @@ tabs(
   ".watch__info-content",
   "active"
 );
-tabs(".watch__mobile", ".watch__info-button", ".watch__info-content", "active");
+tabs(
+  ".watch__mobile",
+  ".watch__info-button--mob",
+  ".watch__info-content--m",
+  "active"
+);
