@@ -40,10 +40,13 @@ function scripts() {
     src([
       // "node_modules/jquery/dist/jquery.js",
       // "node_modules/slick-slider/slick/slick.js",
-      "app/js/watch-maximum.js",
+      // "node_modules/mixitup/dist/mixitup.min.js",
+      // "app/js/watch-maximum.js",
+      "app/js/blog-about.js",
       // "app/js/blog-page.js",
     ])
-      .pipe(concat("watch-maximum.min.js"))
+      // .pipe(concat("mixitup.min.js"))
+      .pipe(concat("blog-about.min.js"))
       // .pipe(concat("blog-page.min.js"))
       // .pipe(concat("libs.min.js"))
       .pipe(uglify())
@@ -83,9 +86,11 @@ function watching() {
   watch(
     [
       "app/js/**/*.js",
+      "!app/js/blog-about.min.js",
       "!app/js/watch-maximum.min.js",
       "!app/js/libs.min.js",
       "!app/js/blog-page.min.js",
+      "!app/js/mixitup.min.js",
     ],
     scripts
   );

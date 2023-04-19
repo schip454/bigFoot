@@ -90,6 +90,40 @@
   .article__banner-title {
     font-size: 36px;
   }
+
+  // blog-about
+  .top-blog__titlebox {
+    padding: 0;
+    padding-top: 170px;
+    margin: auto;
+  }
+  .banner-maximum {
+    border-radius: 15px;
+  }
+  .banner-maximum__inner {
+    text-align: left;
+  }
+  .banner-maximum__title {
+    text-align: center;
+    font-size: 48px;
+    padding: 64px 0 0;
+    margin-bottom: 160px;
+  }
+  .banner-maximum__discount {
+    text-align: right;
+    margin-bottom: 30px;
+  }
+  .banner-maximum__btnwrapper {
+    padding: 0 20px;
+    text-align: center;
+  }
+  .banner-maximum__btn {
+    width: 100%;
+  }
+  .card__inner {
+    justify-content: center;
+    gap: 40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -124,6 +158,29 @@
   }
   .article {
     padding: 40px 0 60px;
+  }
+
+  // blog-about
+  .card__item {
+    max-width: 250px;
+    height: 429px;
+  }
+  .card__item-title {
+    font-size: 15px;
+    line-height: 100%;
+  }
+  .card__item-link::after {
+    width: 95px;
+  }
+  .banner-maximum__title {
+    padding-top: 64px;
+    font-size: 38px;
+  }
+  .card__item-img {
+    img {
+      height: 207px;
+      width: 100%;
+    }
   }
 }
 
@@ -210,8 +267,47 @@
     width: 100%;
     text-align: center;
   }
-}
 
+  // blog-about
+  .top-blog {
+    min-height: 380px;
+  }
+  .top-blog__titlebox {
+    padding-top: 135px;
+  }
+  .top-blog__title {
+    font-size: 34px;
+  }
+  .top-blog__text {
+    font-size: 16px;
+  }
+  .card__item {
+    max-width: 375px;
+  }
+  .card__dateandtime {
+    margin-bottom: 18.5px;
+  }
+  .card__item-box {
+    padding: 18.5px 10px 0;
+  }
+  .card__item-link::after {
+    width: 220px;
+  }
+  .banner-maximum__title {
+    font-size: 34px;
+    margin-bottom: 140px;
+  }
+  .banner-maximum__discount {
+    text-align: center;
+    padding-right: 0;
+  }
+  .banner-maximum__discount {
+    font-size: 16px;
+  }
+  .banner-maximum__discount span {
+    font-size: 32px;
+  }
+}
 @media screen and (max-width: 375px) {
   .container {
     max-width: 300px;
@@ -275,5 +371,30 @@
   }
   .article__banner {
     height: 380px;
+  }
+  // blog-about
+  .card__item-link::after {
+    width: 145px;
+  }
+  .top-blog__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .top-blog__titlebox {
+    padding-top: 90px;
+  }
+  .top-blog {
+    min-height: 340px;
+    margin-bottom: 30px;
+  }
+  .banner-maximum {
+    height: 380px;
+  }
+  .banner-maximum__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .banner-maximum__discount {
+    margin-bottom: 110px;
   }
 }
