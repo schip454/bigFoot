@@ -129,7 +129,7 @@
   }
 }
 
-.pagination {
+.breadcrubs {
   padding-top: 40px;
   font-weight: 600;
   font-size: 15px;
@@ -147,9 +147,6 @@
   &__item {
     margin-right: 10px;
     margin-left: 10px;
-    &:first-child {
-      margin-right: 26px;
-    }
   }
   &__item--active {
     color: $black;
@@ -249,12 +246,12 @@
     max-width: 755px;
   }
   &__info-initialletter {
-    font-size: 96px;
-    line-height: 96px;
+    font-size: 76px;
+    line-height: 61px;
     font-weight: 700;
   }
   &__info-box {
-    margin-bottom: 30px;
+    margin: 30px 0;
   }
   &__info-img {
     margin-bottom: 10px;

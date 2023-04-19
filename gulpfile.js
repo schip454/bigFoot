@@ -36,15 +36,20 @@ function images() {
 }
 
 function scripts() {
-  return src([
-    "node_modules/jquery/dist/jquery.js",
-    "node_modules/slick-slider/slick/slick.js",
-    "app/js/main.js",
-  ])
-    .pipe(concat("main.min.js"))
-    .pipe(uglify())
-    .pipe(dest("app/js"))
-    .pipe(browserSync.stream());
+  return (
+    src([
+      // "node_modules/jquery/dist/jquery.js",
+      // "node_modules/slick-slider/slick/slick.js",
+      "app/js/watch-maximum.js",
+      // "app/js/blog-page.js",
+    ])
+      .pipe(concat("watch-maximum.min.js"))
+      // .pipe(concat("blog-page.min.js"))
+      // .pipe(concat("libs.min.js"))
+      .pipe(uglify())
+      .pipe(dest("app/js"))
+      .pipe(browserSync.stream())
+  );
 }
 
 function styles() {
@@ -66,7 +71,7 @@ function build() {
     [
       "app/css/style.min.css",
       "app/fonts/**/*",
-      "app/js/main.min.js",
+      "app/js/watch-maximum.min.js",
       "app/*.html",
     ],
     { base: "app" }
@@ -75,7 +80,15 @@ function build() {
 
 function watching() {
   watch(["app/scss/**/*.scss"], styles);
-  watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
+  watch(
+    [
+      "app/js/**/*.js",
+      "!app/js/watch-maximum.min.js",
+      "!app/js/libs.min.js",
+      "!app/js/blog-page.min.js",
+    ],
+    scripts
+  );
   watch(["app/*.html"]).on("change", browserSync.reload);
 }
 
