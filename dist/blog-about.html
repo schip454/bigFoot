@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Foot</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <!-- <top-blog> -->
+    <section
+      class="top-blog"
+      style="background-image: url(./images/blog-about/bg-kamchatka.jpg)">
+      <div class="container">
+        <div class="top-blog__inner">
+          <div class="breadcrubs">
+            <div class="breadcrubs__inner">
+              <ul class="breadcrubs__list breadcrubs__list-top-blog">
+                <li class="breadcrubs__item">
+                  <a href="#" class="breadcrubs__link">Главная</a>
+                </li>
+                /
+                <li class="breadcrubs__item">
+                  <a href="#" class="breadcrubs__link">Блог</a>
+                </li>
+                /
+                <li class="breadcrubs__item breadcrubs__item--active">
+                  <span class="breadcrubs__link">Камчатка </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="top-blog__titlebox">
+            <h1 class="top-blog__title">Блог о Камчатке</h1>
+            <p class="top-blog__text">Вдохновляющие истории о путешествиях</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- </top-blog> -->
+    <!-- <content-blog> -->
+    <div class="content-blog">
+      <div class="container">
+        <!-- <content-blog__inner> -->
+        <div class="content-blog__inner">
+          <div class="content-blog__filters">
+            <button class="content-blog__filter filter">
+              <span class="filter__name">Фильтр</span>
+            </button>
+
+            <div class="filter__addbox">
+              <div class="filter__add">Животные</div>
+              <div class="filter__add">Животные</div>
+              <div class="filter__add">Животные</div>
+            </div>
+
+            <div class="content-blog__select">
+              <div class="dropdown">
+                <button class="dropdown__button">Последние статьи</button>
+                <ul class="dropdown__list">
+                  <li
+                    class="dropdown__list-item dropdown__list-item--active"
+                    data-value="travel">
+                    Последние статьи
+                  </li>
+                  <li class="dropdown__list-item" data-value="lessons">
+                    Популярное
+                  </li>
+                  <li class="dropdown__list-item" data-value="photo">
+                    Последние статьи
+                  </li>
+                  <li class="dropdown__list-item" data-value="sport">
+                    Популярное
+                  </li>
+                </ul>
+                <input
+                  type="text"
+                  name="select-category"
+                  value=""
+                  class="dropdown__input-hidden" />
+              </div>
+            </div>
+          </div>
+
+          <div class="filter__content animated fadeInUp">
+            <div class="filter__content-box">
+              <h4 class="filter__content-title">Категории</h4>
+              <ul class="filter__content-list filter__content-list--radio">
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-1" type="radio" />
+                    <label for="radio-1" class="radio-label">
+                      Достопримечательности
+                    </label>
+                  </div>
+                </li>
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-2" type="radio" />
+                    <label for="radio-2" class="radio-label">
+                      Горячие новости
+                    </label>
+                  </div>
+                </li>
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-3" type="radio" />
+                    <label for="radio-3" class="radio-label"> Акции </label>
+                  </div>
+                </li>
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-4" type="radio" />
+                    <label for="radio-4" class="radio-label"> Отели </label>
+                  </div>
+                </li>
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-5" type="radio" />
+                    <label for="radio-5" class="radio-label">
+                      Популярное
+                    </label>
+                  </div>
+                </li>
+                <li class="filter__content-item">
+                  <div class="radio">
+                    <input id="radio-6" type="radio" />
+                    <label for="radio-6" class="radio-label">
+                      Личный опыт
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="filter__content-box filter__content-box--radio">
+              <h4 class="filter__content-title">Теги</h4>
+              <div class="filter__content-listwrapper">
+                <ul class="filter__content-list">
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-01" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Медведи</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-02" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Кратор</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-03" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Океан</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-04" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Горы</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-05" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Палатки</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-06" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Вертолёт</span>
+                    </label>
+                  </li>
+                </ul>
+                <ul class="filter__content-list">
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-07" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Глэмпинг</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-08" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Музей</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-09" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Озеро</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-10" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Вулкан</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-11" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Рыба</span>
+                    </label>
+                  </li>
+                  <li class="filter__content-item">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        class="checkbox__real"
+                        name="value-12" />
+                      <span class="checkbox__fake"></span>
+                      <span class="checkbox__title">Природа</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="filter__content-clear">
+              <button class="filter__content-btn">Очистить всё</button>
+            </div>
+          </div>
+        </div>
+        <!-- </content-blog__inner> -->
+
+        <!-- <card__inner> -->
+        <div class="card__inner">
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/1--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/1.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                <!-- Камчатка - это дом для множества видов дикой природы: -->
+                медведей, лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/2--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/2.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+        </div>
+        <!-- </card__inner> -->
+        <div
+          class="banner-maximum"
+          style="background-image: url(./images/blog-about/banner.jpg)">
+          <div class="banner-maximum__inner">
+            <h4 class="banner-maximum__title">Увидеть максимум</h4>
+            <p class="banner-maximum__discount">
+              <span>10%</span>
+              Скидка на наш тур до 30.10.2020
+            </p>
+
+            <div class="banner-maximum__btnwrapper">
+              <a href="#" class="banner-maximum__btn">Записаться</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <card__inner> -->
+        <div class="card__inner">
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/2--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/2.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item> -->
+          <div class="card__item">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/3--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/3.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item> -->
+          <!-- <card__item hidden> -->
+          <div class="card__item hidden animated fadeInUp" data-card="hidden">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/4--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/4.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item hidden> -->
+          <!-- <card__item hidden> -->
+          <div class="card__item hidden animated fadeInUp" data-card="hidden">
+            <div class="card__item-img">
+              <picture>
+                <source
+                  srcset="./images/card/5--mob.png"
+                  media="(max-width: 576px) " />
+                <img src="images/card/5.png" alt="Животный мир Камчатки" />
+              </picture>
+            </div>
+            <div class="card__item-box">
+              <div class="card__dateandtime">
+                <p class="card__date">26 июня, 2023</p>
+                <span>|</span>
+                <p class="card__time">
+                  <img src="images/card/clock.svg" alt="иконка часов" />
+                  11 минут
+                </p>
+              </div>
+              <h3 class="card__item-title">Животный мир Камчатки</h3>
+              <p class="card__item-text">
+                Камчатка - это дом для множества видов дикой природы: медведей,
+                лис, орлов, китов и многих других животных...
+              </p>
+            </div>
+
+            <div class="card__item-linkwrapper">
+              <div class="card__item-link">
+                <a href="#">Читать статью</a>
+              </div>
+            </div>
+          </div>
+          <!-- </card__item hidden> -->
+
+          <a href="#" class="more-btn"> Показать больше статей </a>
+        </div>
+        <!-- </card__inner> -->
+      </div>
+    </div>
+    <!-- </content-blog> -->
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/blog-about.min.js"></script>
+  </body>
+</html>
