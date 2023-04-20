@@ -1,7 +1,7 @@
 {
   "name": "gulp-start",
   "version": "1.0.0",
-  "description": "first gulp starter",
+  "description": "schip's gulp build",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "slick-slider": "^1.8.2"
+    "slick-slider": "^1.8.2",
+    "swiper": "^9.2.3"
   }
 }

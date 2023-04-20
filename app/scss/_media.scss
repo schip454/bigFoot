@@ -124,6 +124,13 @@
     justify-content: center;
     gap: 40px;
   }
+  // blog-main
+  .banner-maximum__btn--main {
+    width: auto;
+  }
+  .blog-main__slider-img {
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -181,6 +188,24 @@
       height: 207px;
       width: 100%;
     }
+  }
+  // blog-main
+  .banner-maximum__title--main {
+    font-size: 32px;
+  }
+  .banner-maximum__text {
+    font-size: 16px;
+    margin-bottom: 160px;
+  }
+  .card__item-tags {
+    padding-bottom: 10px;
+  }
+  .breadcrubs__list-blog-main {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .blog-main__list {
+    top: 75px;
   }
 }
 
@@ -307,7 +332,32 @@
   .banner-maximum__discount span {
     font-size: 32px;
   }
+  // blog-main
+  .banner-maximum__inner--main {
+    text-align: center;
+    padding: 40px 10px 40px 10px;
+  }
+  .banner-maximum__title--main {
+    font-size: 24px;
+  }
+  .banner-maximum__suptitle {
+    font-size: 16px;
+  }
+  .banner-maximum__text {
+    font-size: 16px;
+    margin-bottom: 176px;
+    max-width: none;
+  }
+  .card__item-img {
+    max-width: none;
+    height: 207px;
+  }
+  .ticker__item {
+    font-size: 62px;
+    width: 365px;
+  }
 }
+
 @media screen and (max-width: 375px) {
   .container {
     max-width: 300px;
@@ -396,5 +446,28 @@
   }
   .banner-maximum__discount {
     margin-bottom: 110px;
+  }
+  // blog-main
+  .banner-maximum__inner--main {
+    text-align: center;
+    padding: 40px 10px 30px 10px;
+  }
+  .banner-maximum__title--main {
+    font-size: 22px;
+  }
+  .banner-maximum__suptitle {
+    font-size: 16px;
+  }
+  .banner-maximum__text {
+    font-size: 16px;
+    margin-bottom: 180px;
+  }
+  .banner-maximum.banner-maximum--main {
+    height: 420px;
+  }
+  // blog-main
+  .blog-main__question {
+    max-width: 173px;
+    width: 100%;
   }
 }
