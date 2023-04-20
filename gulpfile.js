@@ -42,12 +42,12 @@ function scripts() {
       // "node_modules/slick-slider/slick/slick.js",
       // "node_modules/mixitup/dist/mixitup.min.js",
       // "app/js/watch-maximum.js",
-      "app/js/blog-about.js",
-      // "app/js/blog-page.js",
+      // "app/js/blog-about.js",
+      "app/js/blog-page.js",
     ])
       // .pipe(concat("mixitup.min.js"))
-      .pipe(concat("blog-about.min.js"))
-      // .pipe(concat("blog-page.min.js"))
+      // .pipe(concat("blog-about.min.js"))
+      .pipe(concat("blog-page.min.js"))
       // .pipe(concat("libs.min.js"))
       .pipe(uglify())
       .pipe(dest("app/js"))

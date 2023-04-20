@@ -697,6 +697,20 @@
 }
 
 .card {
+  &__slider {
+    padding-bottom: 120px;
+  }
+  &__slider-inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  &__slider-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 40px;
+  }
   &__inner {
     display: flex;
     flex-wrap: wrap;
@@ -720,6 +734,9 @@
 
   &__item-img {
     flex: 0 1 auto;
+    img {
+      border-radius: 15px 15px 0px 0px;
+    }
   }
   &__dateandtime {
     display: flex;
@@ -740,7 +757,6 @@
       padding-right: 8px;
     }
   }
-  // // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   &__item-title {
     font-weight: 700;
     font-size: 18px;

@@ -107,6 +107,12 @@ clearFilterBtn.addEventListener("click", () => {
   const filterAddedContentAll = document.querySelectorAll(".filter__add");
   filterAddedContentAll.forEach((item) => {
     item.remove();
+    for (const radio of radioButtons) {
+      radio.checked = false;
+    }
+    for (const checkbox of checkboxButtons) {
+      checkbox.checked = false;
+    }
   });
 });
 
