@@ -964,13 +964,14 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: ticker;
-  animation-duration: 10s;
+  animation-duration: 8s;
+  animation-direction: alternate;
   transition: 0.3s ease;
   overflow: hidden;
 }
 
 .ticker__item {
-  width: 440px;
+  width: 451px;
   overflow: hidden;
   cursor: pointer;
   font-weight: 900;
@@ -997,7 +998,7 @@
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
@@ -1031,6 +1032,7 @@
     position: relative;
   }
   &__slider-img {
+    width: 100%;
     height: 500px;
   }
   &__question {
@@ -1053,23 +1055,8 @@
 }
 .breadcrubs.breadcrubs-blog-main {
   padding: 0;
-  &__inner {
-  }
-  &__list {
-  }
-  &__item {
-  }
-  &__link {
-  }
-  &__item--active {
-  }
 }
-.swiper-container {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
+
 .swiper-pagination {
   padding-top: 100px;
   display: flex;
