@@ -354,7 +354,14 @@
   }
   .ticker__item {
     font-size: 62px;
-    width: 365px;
+    width: 380px;
+  }
+  .swiper-pagination {
+    padding-bottom: 10px;
+    overflow-x: scroll;
+  }
+  .blog-main__slider {
+    padding-bottom: 80px;
   }
 }
 

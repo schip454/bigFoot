@@ -15,9 +15,9 @@ const swiper = new Swiper(".blog-main__slider", {
     renderBullet: function (index, className) {
       return `
           <div class="${className}">
-          <div class="ticker">
-            <div class="ticker__item">${menu[index]}</div>
-          </div>
+            <div class="ticker">
+              <div class="ticker__item">${menu[index]}</div>
+           </div>
           </div>`;
     },
   },
@@ -38,31 +38,17 @@ const swiper = new Swiper(".blog-main__slider", {
 const ticker = document.querySelectorAll(".ticker__item");
 ticker.forEach((item) => {
   item.addEventListener("mouseover", () => {
+    // по ховеру переход к слайду
+    item.click();
+
     document.querySelectorAll(".ticker").forEach((item) => {
       item.classList.add("stop");
     });
+
     item.addEventListener("mouseout", () => {
       document.querySelectorAll(".ticker").forEach((item) => {
         item.classList.remove("stop");
       });
-    });
-
-    item.addEventListener("click", () => {
-      document.querySelectorAll(".ticker").forEach((item) => {
-        item.classList.add("stop");
-      });
-    });
-    item.addEventListener("touchstart", () => {
-      document.querySelectorAll(".ticker").forEach((item) => {
-        item.classList.add("stop");
-      });
-      console.log("touchstart");
-    });
-    item.addEventListener("touchend", () => {
-      document.querySelectorAll(".ticker").forEach((item) => {
-        item.classList.remove("stop");
-      });
-      console.log("touchend");
     });
   });
 });
@@ -96,3 +82,61 @@ buttons.forEach((value) => {
     });
   });
 });
+
+// перетаскивание туда сюда
+window.addEventListener(
+  "load",
+  function () {
+    const ticker = document.querySelectorAll(".ticker__item");
+    ticker.forEach((item) => {
+      let boxleft;
+      let startx;
+      let dist = 0;
+      let touchobj = null;
+      item.addEventListener(
+        "touchstart",
+        function (e) {
+          touchobj = e.changedTouches[0];
+          boxleft = 0;
+          startx = parseInt(touchobj.clientX);
+          e.preventDefault();
+        },
+        false
+      );
+      item.addEventListener(
+        "touchmove",
+        function (e) {
+          touchobj = e.changedTouches[0];
+          let dist = parseInt(touchobj.clientX) - startx;
+
+          item.style.transform = `translateX(${boxleft + dist}px)`;
+          item.style.transition = "none";
+
+          item.click();
+          item.style.color = "#000";
+
+          document.querySelectorAll(".ticker").forEach((item) => {
+            item.classList.add("stop");
+          });
+
+          e.preventDefault();
+        },
+        false
+      );
+      item.addEventListener("touchend", () => {
+        item.style.transform = `translateX(0px)`;
+        item.style.transition = "0.3s ease";
+
+        item.style.color = "transparent";
+
+        document.querySelectorAll(".ticker").forEach((item) => {
+          item.classList.remove("stop");
+        });
+      });
+      item.addEventListener("click", () => {
+        console.log("click");
+      });
+    });
+  },
+  false
+);
