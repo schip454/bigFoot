@@ -61,20 +61,9 @@ buttons.forEach((value) => {
       if (item.dataset.card === "hidden") {
         item.classList.remove("bounceOut");
         item.classList.add("fadeInUp");
-
-        setTimeout(() => {
-          item.style.display = "block";
-        }, 200);
-        value.textContent = "Скрыть";
+        item.style.display = "block";
+        value.remove();
         item.dataset.card = "open";
-      } else if (item.dataset.card === "open") {
-        item.classList.remove("fadeInUp");
-        item.classList.add("bounceOut");
-        value.textContent = "Показать больше статей";
-        item.dataset.card = "hidden";
-        setTimeout(() => {
-          item.style.display = "none";
-        }, 500);
       }
     });
   });
@@ -86,13 +75,26 @@ const clearFilterBtn = document.querySelector(".filter__content-btn");
 const radioButtons = document.querySelectorAll("input[type='radio']");
 const checkboxButtons = document.querySelectorAll("input[type='checkbox']");
 const filterAddBox = document.querySelector(".filter__addbox");
+const filterAddBoxTable = document.querySelector(".filter__addbox--table");
+const filterAddBoxMob = document.querySelector(".filter__addbox--mob");
+const submitBtn = document.querySelector(".filter__content-submitbtn");
+
 setInterval(() => {
   const filterAddedContentAll = document.querySelectorAll(".filter__add");
 
   for (const filterContent of filterAddedContentAll) {
     filterContent.addEventListener("click", (e) => {
       const target = e.target;
+
       target.remove();
+
+      // сброс баттонов
+      for (const radio of radioButtons) {
+        radio.checked = false;
+      }
+      for (const checkbox of checkboxButtons) {
+        checkbox.checked = false;
+      }
     });
   }
 }, 1000);
@@ -114,6 +116,10 @@ clearFilterBtn.addEventListener("click", () => {
       checkbox.checked = false;
     }
   });
+  clearFilterBtn.style.display = "none";
+
+  filterBtn.classList.remove("active");
+  filterContent.classList.remove("filter__content--open");
 });
 
 for (const radio of radioButtons) {
@@ -123,20 +129,124 @@ for (const radio of radioButtons) {
     const addFilterHTML = document.createElement("div");
     addFilterHTML.classList.add("filter__add");
     addFilterHTML.textContent = radioText;
-
-    filterAddBox.appendChild(addFilterHTML);
   });
 }
 
-for (const checkbox of checkboxButtons) {
-  checkbox.addEventListener("click", () => {
+// for (const checkbox of checkboxButtons) {
+//   checkbox.addEventListener("click", () => {
+//     submitBtn.addEventListener("click", (e) => {
+//       const checkboxText =
+//         checkbox.nextElementSibling.nextElementSibling.innerText;
+
+//       const addFilterHTML = document.createElement("div");
+//       addFilterHTML.classList.add("filter__add");
+//       addFilterHTML.textContent = checkboxText;
+
+//       if (document.documentElement.clientWidth < 1024) {
+//         filterAddBoxMob.appendChild(addFilterHTML);
+//       } else {
+//         filterAddBox.appendChild(addFilterHTML);
+//       }
+//       checkbox.checked = false;
+
+//       if (document.documentElement.clientWidth < 1024) {
+//         filterAddBoxMob.removeChild(addFilterHTML.previousElementSibling);
+//       } else {
+//         filterAddBox.removeChild(addFilterHTML.previousElementSibling);
+//       }
+//     });
+//   });
+// }
+
+submitBtn.addEventListener("click", () => {
+  filterAddBox.innerHTML = "";
+  checkboxButtons.forEach((checkbox) => {
+    if (!checkbox.checked) return;
+
     const checkboxText =
       checkbox.nextElementSibling.nextElementSibling.innerText;
-
     const addFilterHTML = document.createElement("div");
     addFilterHTML.classList.add("filter__add");
     addFilterHTML.textContent = checkboxText;
 
-    filterAddBox.appendChild(addFilterHTML);
+    if (document.documentElement.clientWidth < 768) {
+      filterAddBoxMob.appendChild(addFilterHTML);
+    } else if (document.documentElement.clientWidth < 1024) {
+      filterAddBoxTable.appendChild(addFilterHTML);
+    } else {
+      filterAddBox.appendChild(addFilterHTML);
+    }
+    checkbox.checked = false;
+  });
+
+  radioButtons.forEach((radio) => {
+    if (!radio.checked) return;
+
+    const radioText = radio.nextElementSibling.innerText;
+    const addFilterHTML = document.createElement("div");
+    addFilterHTML.classList.add("filter__add");
+    addFilterHTML.textContent = radioText;
+
+    if (document.documentElement.clientWidth < 768) {
+      filterAddBoxMob.appendChild(addFilterHTML);
+    } else if (document.documentElement.clientWidth < 1024) {
+      filterAddBoxTable.appendChild(addFilterHTML);
+    } else {
+      filterAddBox.appendChild(addFilterHTML);
+    }
+  });
+
+  filterBtn.classList.remove("active");
+  filterContent.classList.remove("filter__content--open");
+});
+
+// скрывает кнопку отчистить все в радиокнопках
+// for (const radio of radioButtons) {
+//   if (!radio.checked) {
+//     clearFilterBtn.style.display = "none";
+//   }
+//   radio.addEventListener("click", () => {
+//     if (radio.checked) {
+//       clearFilterBtn.style.display = "inline-block";
+//     }
+//   });
+// }
+
+// скрывает кнопку отчистить все в чекбоксах
+for (const checkbox of checkboxButtons) {
+  // if (!checkbox.checked) {
+  //   clearFilterBtn.style.display = "none";
+  // }
+  checkbox.addEventListener("click", () => {
+    if (checkbox.checked) {
+      clearFilterBtn.style.display = "inline-block";
+    }
   });
 }
+
+// mobile filter
+const filterContentCloseBtnCat = document.querySelector(
+  ".filter__content-closebtn--categories"
+);
+const filterContentSpaceOnClickToCat = document.querySelector(
+  ".filter__content-titlebox--cat"
+);
+const filterContentCloseBtnTag = document.querySelector(
+  ".filter__content-closebtn--tags"
+);
+const filterContentSpaceOnClickToTag = document.querySelector(
+  ".filter__content-titlebox--tags"
+);
+const insideFilterContent = document.querySelector(".filter__content-list");
+const insideFilterContentTags = document.querySelector(
+  ".filter__content-listwrapper"
+);
+
+filterContentSpaceOnClickToCat.addEventListener("click", () => {
+  filterContentCloseBtnCat.classList.toggle("open-btn");
+  insideFilterContent.classList.toggle("hidden");
+});
+filterContentSpaceOnClickToTag.addEventListener("click", () => {
+  filterContentCloseBtnTag.classList.toggle("open-btn");
+  insideFilterContentTags.classList.toggle("hidden");
+});

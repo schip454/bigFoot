@@ -59,3 +59,30 @@ tabs(
   ".watch__info-content--m",
   "active"
 );
+
+const tabButtons = document.querySelectorAll(".watch__info-button--mob");
+const tabContentMob = document.querySelectorAll(".watch__info-content--m");
+tabButtons.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    console.log("click", e.target);
+    if (item.classList.contains("active")) {
+      item.classList.remove("active");
+      tabContentMob.forEach((item) => {
+        item.style.display = "none";
+      });
+    } else {
+      item.classList.add("active");
+      tabContentMob.forEach((item) => {
+        item.style.display = "block";
+      });
+    }
+  });
+});
+
+// Иммитация ховер эффект на десктоп версии
+const currentTabs = document.querySelectorAll(".watch__info-button");
+currentTabs.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    item.click();
+  });
+});

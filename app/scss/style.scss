@@ -15,7 +15,7 @@
     margin-bottom: 10px;
   }
   &__title {
-    max-width: 993px;
+    max-width: 920px;
     font-style: italic;
     font-weight: 500;
     font-size: 48px;
@@ -87,6 +87,7 @@
   }
   &__info-contentbox {
     width: 100%;
+    max-width: 650px;
   }
   &__info-content {
     transition: 0.3s ease;
@@ -107,7 +108,7 @@
     justify-content: space-between;
   }
   &__info-item {
-    max-width: 300px;
+    max-width: 310px;
     width: 100%;
     position: relative;
     padding-left: 30px;
@@ -357,7 +358,7 @@
 .top-blog {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   min-height: 500px;
   margin-bottom: 71px;
   &__inner {
@@ -389,19 +390,33 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    position: relative;
   }
   &__filter {
   }
   &__select {
+    max-width: 243px;
+    width: 100%;
   }
   &__select-item {
   }
 }
+
+.card__slider--page {
+  .swiper-slide {
+    width: 320px !important;
+  }
+  .card__slider-inner {
+    overflow: hidden;
+  }
+}
+
 .filter {
   padding: 5px 30px 5px 10px;
   background: $darkenwhite;
   border-radius: 10px;
   position: relative;
+  height: 32px;
   &.active {
     &::after {
       transform: rotate(180deg);
@@ -427,9 +442,9 @@
     transition: 0.3s ease;
     display: none;
     background: $darkenwhite;
-    max-width: 718px;
+    max-width: 680px;
     width: 100%;
-    height: 252px;
+    height: 340px;
     padding: 20px;
     border-radius: 10px;
     box-sizing: content-box;
@@ -442,11 +457,12 @@
   }
   &__content--open {
     position: absolute;
-    top: 602px;
-    left: 47px;
+    top: 30px;
+    left: 0;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    z-index: 1;
   }
   &__content-listwrapper {
     max-width: 263px;
@@ -454,7 +470,17 @@
     display: flex;
     justify-content: space-between;
   }
-
+  &__content-titlebox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__content-closebtn {
+    padding: 0;
+    display: none;
+    transform: rotate(0);
+    transition: 0.3s ease;
+  }
   &__content-title {
     font-weight: 500;
     margin-bottom: 20px;
@@ -469,9 +495,22 @@
   }
   &__content-clear {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    left: 20px;
+    bottom: 25px;
+    font-size: 12px;
   }
+  &__content-submit {
+    position: absolute;
+    bottom: 25px;
+    right: 23px;
+  }
+  &__content-submitbtn {
+    font-size: 16px;
+    padding: 10px 51px;
+    border: 1px solid $black;
+    border-radius: 7px;
+  }
+
   &__content-btn {
     font-size: 12px;
     line-height: 100%;
@@ -491,20 +530,34 @@
   &__addbox {
     display: flex;
     align-items: center;
-    max-width: 900px;
+    max-width: 880px;
+
+    width: 100%;
+    overflow: hidden;
+  }
+  &__addbox--mob,
+  &__addbox--table {
+    display: none;
+    align-items: center;
+    max-width: 880px;
+
     width: 100%;
     overflow: hidden;
   }
   &__add {
+    white-space: nowrap;
     cursor: pointer;
     position: relative;
-    padding-right: 17px;
-    margin-right: 30px;
+    font-size: 12px;
+    margin-right: 10px;
+    border-radius: 7px;
+    border: 1px solid $black;
+    padding: 0 22px 0 6px;
     &::after {
       content: "";
       position: absolute;
-      right: 0;
-      top: 7px;
+      right: 5px;
+      top: 8px;
       background: url(../images/blog-about/x.svg);
       width: 9px;
       height: 9px;
@@ -528,7 +581,7 @@
         height: 16px;
         position: relative;
         top: 5px;
-        margin-right: 11px;
+        margin-right: 8px;
         cursor: pointer;
         text-align: center;
         transition: 0.3s ease;
@@ -629,8 +682,10 @@
   position: relative;
   outline: none;
   display: block;
-  width: 100%;
+  text-align: left;
   max-width: 243px;
+  width: 100%;
+
   background-color: $darkenwhite;
   border-radius: 15px;
   padding: 5px 30px 5px 10px;
@@ -673,7 +728,7 @@
 .dropdown__list-item {
   padding: 0;
   margin: 0;
-  padding: 13px 20px;
+  padding: 13px 10px;
   border-bottom: 0;
   cursor: pointer;
   transition: 0.3s ease;
@@ -706,11 +761,26 @@
     align-items: center;
     gap: 30px;
   }
+  &__slider-titlebox {
+    display: flex;
+    justify-content: space-between;
+  }
   &__slider-title {
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
     margin-bottom: 40px;
+  }
+  &__slider-prompt {
+    animation-name: cursorMove;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    display: none;
+    img {
+      width: 30px;
+      height: 30px;
+    }
   }
   &__inner {
     display: flex;
@@ -718,6 +788,8 @@
     gap: 50px 20px;
     max-width: 1000px;
     margin: 0 auto;
+  }
+  &__item-boxlink {
   }
   &__inner-title {
     font-weight: 600;
@@ -794,7 +866,7 @@
     font-size: 12px;
     line-height: 100%;
     letter-spacing: 0.05em;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
     span {
       display: inline-block;
       margin: 0 15px;
@@ -813,11 +885,20 @@
     font-size: 18px;
     line-height: 100%;
     margin-bottom: 10px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &__item-text {
     font-size: 16px;
     line-height: 120%;
     margin-bottom: 27px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
   }
   &__item-linkwrapper {
     display: flex;
@@ -961,11 +1042,8 @@
 
 .ticker {
   display: flex;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-name: ticker;
-  animation-duration: 8s;
-  animation-direction: alternate;
+  animation: ticker 10s linear infinite;
+  animation-fill-mode: forwards;
   transition: 0.3s ease;
 }
 
@@ -993,16 +1071,21 @@
 
 @keyframes ticker {
   0% {
-    transform: translateX(0%);
+    transform: translateZ(200%);
   }
-
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translate3d(-200%, 0, 0);
   }
 }
 
 .stop {
   animation-play-state: paused;
+}
+
+.blog-main__slider {
+  .swiper-slide {
+    transition: 1s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  }
 }
 
 .blog-main {
@@ -1020,8 +1103,6 @@
     line-height: 100%;
   }
   &__item {
-  }
-  &__link {
     display: block;
   }
   &__slider {
@@ -1059,6 +1140,27 @@
 .swiper-pagination {
   padding-top: 100px;
   display: flex;
+  position: relative;
+}
+
+@keyframes cursorMove {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+  }
+
+  50% {
+    visibility: hidden;
+    transform: translateX(-60px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-62px) scale(1) scale(1.2);
+  }
 }
 
 @import "media";

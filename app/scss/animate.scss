@@ -10,6 +10,15 @@
   animation-duration: 0.5s;
   animation-fill-mode: both;
 }
+.animated.fadeIn {
+  animation-duration: 2s;
+}
+.dropdown__list.animated.fadeIn {
+  animation-duration: 0.3s;
+}
+.filter__content.animated.fadeIn {
+  animation-duration: 0.3s;
+}
 .animated.infinite {
   animation-iteration-count: infinite;
 }

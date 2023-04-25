@@ -44,6 +44,7 @@ function scripts() {
       // "node_modules/swiper/swiper-bundle.esm.browser.min.js",
       // "app/js/watch-maximum.js",
       // "app/js/blog-about.js",
+      // "app/js/blog-page.js",
 
       "app/js/blog-main.js",
     ])
@@ -54,6 +55,7 @@ function scripts() {
       .pipe(concat("blog-main.min.js"))
       // .pipe(concat("blog-page.min.js"))
       // .pipe(concat("libs.min.js"))
+      // .pipe(concat("watch-maximum.min.js"))
       .pipe(uglify())
       .pipe(dest("app/js"))
       .pipe(browserSync.stream())
