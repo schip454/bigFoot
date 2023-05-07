@@ -1,7 +1,24 @@
 // слайдер
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
 
-const menu = ["африка", "камчатка", "африка", "камчатка", "африка", "камчатка"];
+const menu = [
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+  "африка",
+  "камчатка",
+];
 
 const swiper = new Swiper(".blog-main__slider", {
   loop: true,

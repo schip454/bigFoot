@@ -35,7 +35,8 @@
     padding: 30px 0;
     font-size: 24px;
   }
-  &__info-button {
+  &__info-button,
+  &__info-button--mob {
     max-width: 690px;
     width: 100%;
     text-align: left;
@@ -89,9 +90,13 @@
     width: 100%;
     max-width: 650px;
   }
-  &__info-content {
+  &__info-content,
+  &__info-content--m {
     transition: 0.3s ease;
     max-width: 650px;
+  }
+  &__info-content-active--m {
+    display: block;
   }
   &__info-image {
     margin-bottom: 30px;
@@ -430,7 +435,7 @@
     top: 13px;
     background: url(../images/blog-about/arr-down.svg);
     width: 14px;
-    height: 7px;
+    height: 8px;
   }
   &__name {
     font-size: 18px;
@@ -534,6 +539,10 @@
 
     width: 100%;
     overflow: hidden;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   &__addbox--mob,
   &__addbox--table {
@@ -549,7 +558,7 @@
     cursor: pointer;
     position: relative;
     font-size: 12px;
-    margin-right: 10px;
+    // margin-right: 10px;
     border-radius: 7px;
     border: 1px solid $black;
     padding: 0 22px 0 6px;
@@ -703,7 +712,7 @@
   top: 13px;
   background: url(../images/blog-about/arr-down.svg);
   width: 14px;
-  height: 7px;
+  height: 8px;
 }
 .dropdown__list {
   display: none;
@@ -797,6 +806,7 @@
     line-height: 100%;
     text-align: center;
     margin-bottom: 50px;
+    text-transform: uppercase;
   }
   &__item {
     max-width: 320px;
@@ -1042,7 +1052,7 @@
 
 .ticker {
   display: flex;
-  animation: ticker 10s linear infinite;
+  animation: ticker 20s linear infinite;
   animation-fill-mode: forwards;
   transition: 0.3s ease;
 }
@@ -1073,8 +1083,8 @@
   0% {
     transform: translateZ(200%);
   }
-  to {
-    transform: translate3d(-200%, 0, 0);
+  100% {
+    transform: translate3d(-400%, 0, 0);
   }
 }
 
@@ -1141,6 +1151,7 @@
   padding-top: 100px;
   display: flex;
   position: relative;
+  left: -1200px;
 }
 
 @keyframes cursorMove {

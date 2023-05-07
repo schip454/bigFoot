@@ -5,6 +5,14 @@ const filterContent = document.querySelector(".filter__content");
 filterBtn.addEventListener("click", () => {
   filterBtn.classList.toggle("active");
   filterContent.classList.toggle("filter__content--open");
+
+  // const defaultRadioBtn = document.querySelector("#radio-1");
+  // defaultRadioBtn.checked = true;
+
+  // for (const checkbox of checkboxButtons) {
+  //   checkbox.checked = false;
+  // }
+  // clearFilterBtn.style.display = "none";
 });
 
 // select
@@ -89,23 +97,32 @@ setInterval(() => {
       target.remove();
 
       // сброс баттонов
-      for (const radio of radioButtons) {
-        radio.checked = false;
-      }
-      for (const checkbox of checkboxButtons) {
+      radioButtons.forEach((radio) => {
+        if (!e.target.value === radio.innerText) {
+          radio.checked = false;
+        }
+      });
+      checkboxButtons.forEach((checkbox) => {
         checkbox.checked = false;
-      }
+      });
+      clearFilterBtn.style.display = "none";
+
+      // const defaultRadioBtn = document.querySelector("#radio-1");
+      // defaultRadioBtn.checked = true;
     });
   }
 }, 1000);
 
-clearFilterBtn.addEventListener("click", () => {
-  for (const radio of radioButtons) {
-    radio.checked = false;
-  }
-  for (const checkbox of checkboxButtons) {
+clearFilterBtn.addEventListener("click", (e) => {
+  radioButtons.forEach((radio) => {
+    if (!e.target.value === radio.innerText) {
+      radio.checked = false;
+    }
+  });
+  checkboxButtons.forEach((checkbox) => {
     checkbox.checked = false;
-  }
+  });
+
   const filterAddedContentAll = document.querySelectorAll(".filter__add");
   filterAddedContentAll.forEach((item) => {
     item.remove();
@@ -120,6 +137,9 @@ clearFilterBtn.addEventListener("click", () => {
 
   filterBtn.classList.remove("active");
   filterContent.classList.remove("filter__content--open");
+
+  const defaultRadioBtn = document.querySelector("#radio-1");
+  defaultRadioBtn.checked = true;
 });
 
 for (const radio of radioButtons) {
@@ -131,32 +151,6 @@ for (const radio of radioButtons) {
     addFilterHTML.textContent = radioText;
   });
 }
-
-// for (const checkbox of checkboxButtons) {
-//   checkbox.addEventListener("click", () => {
-//     submitBtn.addEventListener("click", (e) => {
-//       const checkboxText =
-//         checkbox.nextElementSibling.nextElementSibling.innerText;
-
-//       const addFilterHTML = document.createElement("div");
-//       addFilterHTML.classList.add("filter__add");
-//       addFilterHTML.textContent = checkboxText;
-
-//       if (document.documentElement.clientWidth < 1024) {
-//         filterAddBoxMob.appendChild(addFilterHTML);
-//       } else {
-//         filterAddBox.appendChild(addFilterHTML);
-//       }
-//       checkbox.checked = false;
-
-//       if (document.documentElement.clientWidth < 1024) {
-//         filterAddBoxMob.removeChild(addFilterHTML.previousElementSibling);
-//       } else {
-//         filterAddBox.removeChild(addFilterHTML.previousElementSibling);
-//       }
-//     });
-//   });
-// }
 
 submitBtn.addEventListener("click", () => {
   filterAddBox.innerHTML = "";
@@ -176,7 +170,7 @@ submitBtn.addEventListener("click", () => {
     } else {
       filterAddBox.appendChild(addFilterHTML);
     }
-    checkbox.checked = false;
+    // checkbox.checked = false;
   });
 
   radioButtons.forEach((radio) => {
@@ -201,22 +195,22 @@ submitBtn.addEventListener("click", () => {
 });
 
 // скрывает кнопку отчистить все в радиокнопках
-// for (const radio of radioButtons) {
-//   if (!radio.checked) {
-//     clearFilterBtn.style.display = "none";
-//   }
-//   radio.addEventListener("click", () => {
-//     if (radio.checked) {
-//       clearFilterBtn.style.display = "inline-block";
-//     }
-//   });
-// }
+for (const radio of radioButtons) {
+  if (!radio.checked) {
+    clearFilterBtn.style.display = "none";
+  }
+  radio.addEventListener("click", () => {
+    if (radio.checked) {
+      clearFilterBtn.style.display = "inline-block";
+    }
+  });
+}
 
 // скрывает кнопку отчистить все в чекбоксах
 for (const checkbox of checkboxButtons) {
-  // if (!checkbox.checked) {
-  //   clearFilterBtn.style.display = "none";
-  // }
+  if (!checkbox.checked) {
+    clearFilterBtn.style.display = "none";
+  }
   checkbox.addEventListener("click", () => {
     if (checkbox.checked) {
       clearFilterBtn.style.display = "inline-block";
@@ -246,7 +240,41 @@ filterContentSpaceOnClickToCat.addEventListener("click", () => {
   filterContentCloseBtnCat.classList.toggle("open-btn");
   insideFilterContent.classList.toggle("hidden");
 });
+
+filterContentCloseBtnTag.classList.add("open-btn");
+
 filterContentSpaceOnClickToTag.addEventListener("click", () => {
-  filterContentCloseBtnTag.classList.toggle("open-btn");
-  insideFilterContentTags.classList.toggle("hidden");
+  if (insideFilterContentTags.classList.contains("hidden")) {
+    filterContentCloseBtnTag.classList.remove("open-btn");
+    insideFilterContentTags.classList.remove("hidden");
+  } else {
+    insideFilterContentTags.classList.add("hidden");
+    filterContentCloseBtnTag.classList.add("open-btn");
+  }
 });
+
+// for (const checkbox of checkboxButtons) {
+//   checkbox.addEventListener("click", () => {
+//     submitBtn.addEventListener("click", (e) => {
+//       const checkboxText =
+//         checkbox.nextElementSibling.nextElementSibling.innerText;
+
+//       const addFilterHTML = document.createElement("div");
+//       addFilterHTML.classList.add("filter__add");
+//       addFilterHTML.textContent = checkboxText;
+
+//       if (document.documentElement.clientWidth < 1024) {
+//         filterAddBoxMob.appendChild(addFilterHTML);
+//       } else {
+//         filterAddBox.appendChild(addFilterHTML);
+//       }
+//       checkbox.checked = false;
+
+//       if (document.documentElement.clientWidth < 1024) {
+//         filterAddBoxMob.removeChild(addFilterHTML.previousElementSibling);
+//       } else {
+//         filterAddBox.removeChild(addFilterHTML.previousElementSibling);
+//       }
+//     });
+//   });
+// }
